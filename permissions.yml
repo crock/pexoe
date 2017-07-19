@@ -1,0 +1,19 @@
+groups:
+  Member:
+    default: true
+    permissions:
+    - essentials.build
+    - essentials.chat
+    options:
+      prefix: 'Member'
+      suffix: ''
+      rank: 1000
+  Moderator:
+    default: false
+    permissions:
+    - essentials.kick
+    - essentials.ban
+    options:
+      prefix: 'Mod'
+      suffix: ''
+      rank: 200
