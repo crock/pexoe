@@ -16,7 +16,8 @@ var Firebase = require('firebase')
 
 Vue.use(VueFire)
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
+Vue.config.errorHandler = true
 
 // Initialize Firebase
 var config = {
