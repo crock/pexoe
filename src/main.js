@@ -3,6 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Raven from 'raven-js';
+import RavenVue from 'raven-js/plugins/vue';
+
+Raven
+    .config('https://fc465557c19a42bfbf558804bd8944cd@sentry.io/193994')
+    .addPlugin(RavenVue, Vue)
+    .install();
 
 var VueFire = require('vuefire')
 var Firebase = require('firebase')
