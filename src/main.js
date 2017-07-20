@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Raven from 'raven-js';
 import RavenVue from 'raven-js/plugins/vue';
+import axios from 'axios';
 
 Raven
     .config('https://fc465557c19a42bfbf558804bd8944cd@sentry.io/193994')
@@ -16,6 +17,7 @@ var Firebase = require('firebase')
 
 Vue.use(VueFire)
 
+axios.defaults.baseURL = 'https://pexoe.net'
 Vue.config.productionTip = true
 Vue.config.errorHandler = true
 
@@ -51,10 +53,4 @@ var app = new Vue({
 			anArray: db.ref()
 		}
 	}
-	// firebase: {
-	// 	anObject: {
-	// 		source: db.ref("pexoe-668d2"),
-	// 		asObject: true
-	// 	}
-	// }
 })

@@ -64,6 +64,11 @@ import perms from '../components/PermInput'
 import search from '../components/PluginSearch'
 import plugin from '../components/Plugin'
 import filter from '../components/PluginFilter'
+import axios from 'axios'
+
+var instance = axios.create({
+  baseURL: 'https://pexoe.net'
+});
 
 export default {
 	data() {
@@ -113,7 +118,10 @@ export default {
 			}
 		},
 		onSearch: function (query) {
-			console.log(query);
+			let q = encodeURIComponent(query);
+			let r = instance.get('/search/request?q='+q);
+			console.log(r.data);
+
 		}
 	}
 }
